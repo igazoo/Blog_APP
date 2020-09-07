@@ -20,7 +20,8 @@ class PostController extends Controller
     {
         //
         $posts = Post::orderBy('created_at', 'desc')->get();
-        return view('posts.index', compact('posts'));
+        $users = User::all();
+        return view('posts.index', compact('posts', 'users'));
     }
 
     /**

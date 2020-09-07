@@ -17,8 +17,16 @@
                     <div class="post_index" style="text-align: center;">
 
                         @foreach($posts as $post)
+                        @foreach($users as $user)
+
+
                         <div class="post_content" style="text-align: center;">
+                            @if($user->id === $post->user_id)
+                            {{$user->name}}::
+                            @endif
+                            @endforeach
                             {{$post->content}}
+
                             <a href="{{route('posts.edit', $post->id)}}">編集</a>
 
                         </div>
