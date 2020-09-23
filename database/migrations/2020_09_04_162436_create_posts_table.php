@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 class CreatePostsTable extends Migration
 {
+
     /**
      * Run the migrations.
      *
@@ -29,6 +30,7 @@ class CreatePostsTable extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('comments');
         Schema::dropIfExists('posts');
     }
 }

@@ -22,6 +22,8 @@
                             <div class="col-md-6">
                                 <input type="file" name="image">
                             </div>
+
+
                         </div>
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">

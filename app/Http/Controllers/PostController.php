@@ -46,6 +46,8 @@ class PostController extends Controller
         //
         $post = new Post;
 
+
+
         $post->content = $request->input('content');
         $filename = $request->file('image')->store('public/images');
         $post->image = basename($filename);

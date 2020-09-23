@@ -20,7 +20,7 @@ class CreateCommentsTable extends Migration
             $table->text('body');
             $table->integer('user_id')->unsigned();
             $table->timestamps();
-            $table->foreign('post_id')->references('id')->on('posts'); //外部キー
+            $table->foreign('post_id')->references('id')->on('posts')->onDelete('cascade'); //外部キー
         });
     }
 
@@ -32,5 +32,6 @@ class CreateCommentsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('comments');
+        Schema::dropIfExists('posts');
     }
 }

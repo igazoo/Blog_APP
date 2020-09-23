@@ -15,7 +15,7 @@
                     @endif
 
                     <div class="post_index" style="text-align: center;">
-
+                        @if($posts!= null)
                         @foreach($posts as $post)
                         @foreach($users as $user)
 
@@ -36,7 +36,6 @@
                             <a href="#" data-id="{{$post->id}}" onclick="deletePost(this);">削除</a>
                         </form>
                         <img src='/storage/images/{{$post->image}}' height="300px" width="400px">
-
                         <a href="{{route('posts.show', $post->id)}}">
                             @if ($post->comments->count())
                             <span class="badge badge-primary">
@@ -51,6 +50,9 @@
 
 
                         @endforeach
+                        @else
+                        投稿がありません
+                        @endif
                     </div>
 
                 </div>
